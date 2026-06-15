@@ -1,0 +1,16 @@
+name: Deploy myapp
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: myapp          # matches --labels set in step 4
+
+    steps:
+      - name: Rebuild and redeploy
+        run: |
+          cd /data/myapp/
+          docker compose down
+          docker compose up -d --build
