@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: github_static_site
+    ports:
+      - "8080:80"
+    restart: always
+
