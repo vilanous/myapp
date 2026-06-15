@@ -6,11 +6,11 @@ on:
 
 jobs:
   deploy:
-    runs-on: myapp          # matches --labels set in step 4
+    runs-on: self-hosted          # matches --labels set in step 4
 
     steps:
       - name: Rebuild and redeploy
         run: |
-          cd /data/myapp/
+          cd /home/devops-user/myapp/
           docker compose down
           docker compose up -d --build
